@@ -37,7 +37,11 @@ public class VenueImpl implements VenueService {
 
 	@Override
 	public Venue updateVenue(Long venueId, VenueRequest request) {
-		return venueRepository.updateVenue(venueId,request);
+		Venue venue = venueRepository.updateVenue(venueId,request);
+		if(venue == null) {
+			throw new NotFoundException(venueId);
+		}
+		return venue;
 	}
 
 	@Override
