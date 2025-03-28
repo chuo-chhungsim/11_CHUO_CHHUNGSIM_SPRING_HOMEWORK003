@@ -29,6 +29,9 @@ public interface VenueRepository {
 			""")
 	Venue getVenueById(Long venueId);
 
+
+
+
 	@ResultMap("venueMapper")
 	@Select("""
 			INSERT INTO venues

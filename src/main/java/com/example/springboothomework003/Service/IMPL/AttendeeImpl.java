@@ -45,7 +45,11 @@ public class AttendeeImpl implements AttendeeService {
 	}
 
 	@Override
-	public void deleteAttendee(Long attendeeId) {
-		attendeeRepository.deleteAttendee(attendeeId);
+	public Attendee deleteAttendee(Long attendeeId) {
+		Attendee attendee =  attendeeRepository.deleteAttendee(attendeeId);
+		if (attendee == null){
+			throw new NotFoundException(attendeeId);
+		}
+		return attendee;
 	}
 }

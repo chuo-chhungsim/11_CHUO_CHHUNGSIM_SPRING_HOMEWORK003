@@ -52,5 +52,5 @@ public interface AttendeeRepository {
 			WHERE attendee_id = #{attendeeId}
 			RETURNING *
 			""")
-	void deleteAttendee(Long attendeeId);
+	Attendee deleteAttendee(Long attendeeId);
 }

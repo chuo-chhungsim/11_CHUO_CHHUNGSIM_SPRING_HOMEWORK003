@@ -32,3 +32,7 @@ INSERT INTO event_attendee (event_id, attendee_id) VALUES
                                                        (3, 1), (3, 2), (3, 5), (3, 7),
                                                        (4, 3), (4, 4), (4, 6), (4, 8),
                                                        (5, 1), (5, 2), (5, 3), (5, 4);
+
+SELECT conname, confupdtype, confdeltype
+FROM pg_constraint
+WHERE conrelid = 'event_attendee'::regclass;
