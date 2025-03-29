@@ -14,11 +14,7 @@ import java.util.List;
 public class EventRequest {
 	@NotBlank(message = "Event name is mandatory")
 	private String eventName;
-	@NotBlank(message = "Event date is mandatory")
-	@NotNull
 	private Date eventDate;
-	@NotBlank(message = "Venue is mandatory")
 	private Long venueId;
-	@NotBlank(message = "Attendee is mandatory")
 	private List<Long> attendeesId;
 }
