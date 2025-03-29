@@ -53,4 +53,10 @@ public interface AttendeeRepository {
 			RETURNING *
 			""")
 	Attendee deleteAttendee(Long attendeeId);
+
+
+	@Select("""
+			SELECT COUNT(*) FROM attendees WHERE attendee_id = #{attendeeId}
+			""")
+	boolean existsById(Long attendeeId);
 }

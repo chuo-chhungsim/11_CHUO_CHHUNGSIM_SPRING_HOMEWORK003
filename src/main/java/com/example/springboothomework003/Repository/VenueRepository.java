@@ -57,4 +57,8 @@ public interface VenueRepository {
 			RETURNING *
 			""")
 	Venue deleteVenue(Long venueId);
+
+
+	@Select("SELECT COUNT(*) FROM venues WHERE venue_id = #{venueId}")
+	boolean existsById(Long venueId);
 }
